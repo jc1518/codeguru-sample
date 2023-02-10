@@ -96,6 +96,6 @@ With above information, are you able to detect the bug now? If yes, then you can
 
 As you can see, the buggy code takes x2 more time to complete than the fixed code. Most importantly, it returns the wrong information! It counts Test2 and Test3 OU multiple times.
 
-The fix is to change line 31 from `for child_ou in child_ous:` to `for child_ou in child_ous[:]:`. The reson is that the `child_ou` list is a moving part, it changes on the go while the code does the recursive queries. It should use slice notation to make a copy of the list first.
+The fix is to change line 31 from `for child_ou in child_ous:` to `for child_ou in child_ous[:]:`. The reason is that the `child_ou` list is a moving part, it changes on the go while the code does the recursive queries. It should use slice notation to make a copy of the list first.
 
-I definitly consider to add CodeGuru into my CICD pipelines, as it helps to reduce the bugs. What do you think?
+I definitely consider to add CodeGuru into my CICD pipelines, as it helps to reduce the bugs. What do you think?
