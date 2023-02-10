@@ -1,0 +1,16 @@
+[ {
+  "filePath" : "get_ous.py",
+  "recommendationId" : "security-53df0dd0e9c18d479cb11193ba7026c599fd781795a0f30fc633c38",
+  "startLine" : 31,
+  "endLine" : 31,
+  "description" : "It appears that you are modifying a sequence while iterating over it. The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, it is recommended that you first make a copy, such as by using slice notation.\n\n[Learn more](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)",
+  "recommendationCategory" : "PythonBestPractices",
+  "ruleMetadata" : {
+    "ruleId" : "python/iterating-sequence-modification@v1.0",
+    "ruleName" : "Error prone sequence modification",
+    "shortDescription" : "Sequence modification while iterating over it might cause unexpected bugs.",
+    "longDescription" : "The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, we recommend that you first make a copy, such as by using slice notation.",
+    "ruleTags" : [ "availability", "data-integrity", "security", "security-context", "python" ]
+  },
+  "severity" : "High"
+} ]

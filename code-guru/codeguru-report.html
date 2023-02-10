@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>CodeGuru Reviewer Recommendations</h2>
+
+<br/><hr style="width:90%"><br/>
+<h3>In: get_ous.py</a> L33</h3>
+<p><strong>Issue:</strong> It appears that you are modifying a sequence while iterating over it. The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, it is recommended that you first make a copy, such as by using slice notation.</p>
+<p><a href="https://docs.python.org/3/reference/compound_stmts.html#the-for-statement">Learn more</a></p>
+<p><strong>Severity:</strong> High<p/><p><strong>Rule ID:</strong> python/iterating-sequence-modification@v1.0<p/><p><strong>Rule Name:</strong> Error prone sequence modification<p/><p><strong>Description:</strong> The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, we recommend that you first make a copy, such as by using slice notation.</p>
+<p><strong>Tags:</strong></p>
+<ul>
+<li>availability</li>
+<li>data-integrity</li>
+<li>security</li>
+<li>security-context</li>
+<li>python</li>
+</ul>
+
+<hr style="width:80%">
+</body>
+</html>

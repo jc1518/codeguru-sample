@@ -1,0 +1,46 @@
+{
+  "$schema" : "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeGuru Reviewer Scanner",
+        "informationUri" : "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/how-codeguru-reviewer-works.html",
+        "rules" : [ {
+          "id" : "python/iterating-sequence-modification@v1.0",
+          "name" : "Error prone sequence modification",
+          "shortDescription" : {
+            "text" : "Error prone sequence modification"
+          },
+          "fullDescription" : {
+            "text" : "Sequence modification while iterating over it might cause unexpected bugs."
+          },
+          "defaultConfiguration" : { },
+          "help" : {
+            "text" : "The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, we recommend that you first make a copy, such as by using slice notation."
+          },
+          "properties" : {
+            "tags" : [ "security-context", "security", "python", "availability", "data-integrity" ]
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "python/iterating-sequence-modification@v1.0",
+      "message" : {
+        "markdown" : "It appears that you are modifying a sequence while iterating over it. The iterable object for the loop expression is calculated once and remains unchanged despite any index changes caused by the sequence modification. This might lead to unexpected bugs. If you need to modify the sequence, it is recommended that you first make a copy, such as by using slice notation.\n\n[Learn more](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "get_ous.py"
+          },
+          "region" : {
+            "startLine" : 31,
+            "endLine" : 31
+          }
+        }
+      } ]
+    } ]
+  } ]
+}
